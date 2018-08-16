@@ -23,9 +23,11 @@ const todos = [{
 
 
 beforeEach((done) => {
-    Todo.remove({}).then(() => {
+    Todo.remove({})
+    .then(() => {
         return Todo.insertMany(todos);
-    }).then(() => done());
+    })
+    .then(() => done());   
 });
 
 describe('POST /todos', () => {
